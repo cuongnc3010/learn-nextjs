@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-mantineui",
+  "name": "learn-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,25 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.12",
-    "@mantine/dates": "^4.2.12",
-    "@mantine/dropzone": "^4.2.12",
-    "@mantine/form": "^4.2.12",
-    "@mantine/hooks": "^4.2.12",
-    "@mantine/modals": "^4.2.12",
-    "@mantine/next": "^4.2.12",
-    "@mantine/notifications": "^4.2.12",
-    "@mantine/prism": "^4.2.12",
-    "@mantine/rte": "^4.2.12",
-    "@mantine/spotlight": "^4.2.12",
-    "dayjs": "^1.11.4",
+    "cookies": "^0.8.0",
     "http-proxy": "^1.18.1",
     "next": "12.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tabler-icons-react": "^1.53.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/cookies": "^0.7.7",
     "@types/http-proxy": "^1.17.9",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",

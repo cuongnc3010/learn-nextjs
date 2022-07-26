@@ -1,11 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-<<<<<<< HEAD
 import httpProxy, { ProxyResCallback } from 'http-proxy'
 import Cookies from 'cookies'
-=======
-import httpProxy, { ProxyReqCallback, ProxyResCallback } from 'http-proxy'
->>>>>>> origin/main
 
 type Data = {
   msg: string
@@ -26,7 +22,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     // dont send cookies to API server
     req.headers.cookie = ''
 
-<<<<<<< HEAD
     const handleLoginResponse: ProxyResCallback = (proxyRes, req, res) => {
       let body = ''
       proxyRes.on('data', function (chunk) {
@@ -51,9 +46,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
         resolve(true)
       })
     }
-=======
-    const handleLoginResponse: ProxyResCallback = (proxyRes, req, res) => {}
->>>>>>> origin/main
 
     proxy.once('proxyRes', handleLoginResponse)
     proxy.web(req, res, {

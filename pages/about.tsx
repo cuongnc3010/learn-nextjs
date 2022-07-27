@@ -1,5 +1,5 @@
 import Header from '@/components/common/header'
-import { MainLayout } from '@/components/layout'
+import { AdminLayout, MainLayout } from '@/components/layout'
 // import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -9,16 +9,16 @@ export interface AboutPageProps {}
 
 export default function AboutPage(props: AboutPageProps) {
   const router = useRouter()
-  console.log('About query:', JSON.stringify(router.query))
+  // console.log('About query:', JSON.stringify(router.query))
   const [postList, setPostList] = useState([])
-  const page = router.query?.page
+  const page = router.query?.page || 1
 
   const handleClick = () => {
     router.push(
       {
         pathname: './about',
         query: {
-          page: (Number(page) || 1) + 1,
+          page: Number(page) + 1,
         },
       },
       undefined,
@@ -50,7 +50,8 @@ export default function AboutPage(props: AboutPageProps) {
     </>
   )
 }
-AboutPage.Layout = MainLayout
+AboutPage.Layout = AdminLayout
+
 export async function getStaticProps() {
   console.log('get static props')
   return {

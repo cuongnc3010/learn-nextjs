@@ -1,6 +1,6 @@
-import Header from '@/components/common/header'
+import { Header } from '@/components/common/header'
 import { AdminLayout, MainLayout } from '@/components/layout'
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 // import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -43,6 +43,9 @@ export default function AboutPage(props: AboutPageProps) {
       <Typography component="h1" variant="h3" color="primary.main">
         About page
       </Typography>
+      <Button variant="contained" color="info" sx={{ p: 2, margin: 5 }}>
+        some info
+      </Button>
       <Header />
       <ul className="post-list">
         {postList.map((post: any) => (

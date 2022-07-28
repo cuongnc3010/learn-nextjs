@@ -1,5 +1,4 @@
 import { useAuth } from '@/hooks'
-import { LayoutProps } from '@/models'
 import { useRouter } from 'next/router'
 import React, { ReactNode } from 'react'
 import { useEffect } from 'react'

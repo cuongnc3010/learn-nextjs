@@ -1,7 +1,12 @@
 import { authApi } from '@/api'
+import { profile } from 'console'
 import useSWR from 'swr'
 import { PublicConfiguration } from 'swr/dist/types'
-
+interface Profile {
+  username: string
+  email: string
+  city: string
+}
 // Auth -> protected pages
 // <Auth>{children}</Auth>
 export function useAuth(options?: Partial<PublicConfiguration>) {

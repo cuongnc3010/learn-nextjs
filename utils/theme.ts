@@ -15,6 +15,11 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiTypography: {
+      defaultProps: {
+        fontFamily: '"Heebo", sans-serif',
+      },
+    },
     MuiContainer: {
       styleOverrides: {
         maxWidthSm: {
@@ -32,6 +37,19 @@ export const theme = createTheme({
       },
       defaultProps: {
         maxWidth: 'md',
+      },
+    },
+    MuiLink: {
+      defaultProps: {
+        underline: 'none',
+      },
+      styleOverrides: {
+        root: {
+          color: 'black',
+          '&:hover, &.active': {
+            color: '#FF6464',
+          },
+        },
       },
     },
   },

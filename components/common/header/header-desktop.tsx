@@ -10,13 +10,13 @@ export interface HeaderDesktopProps {}
 export function HeaderDesktop(props: HeaderDesktopProps) {
   const router = useRouter()
   return (
-    <Box display={{ xs: 'none', md: 'block' }} py={2}>
+    <Box display={{ xs: 'none', md: 'block' }} py={3}>
       <Container>
         <Stack direction="row" justifyContent="flex-end">
           {ROUTE_LIST.map((route) => (
             <Link key={route.path} href={route.path} passHref>
               <MuiLink
-                sx={{ ml: 2, fontWeight: 'medium' }}
+                sx={{ ml: 4, fontWeight: 'medium', fontSize: '20px' }}
                 className={clsx({ active: router.pathname === route.path })}
               >
                 {route.label}

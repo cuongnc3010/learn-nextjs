@@ -6,6 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    // MUI requires the following to be set to true
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    // --------------------------------------------------
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

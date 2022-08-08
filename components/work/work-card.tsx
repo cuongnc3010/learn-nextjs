@@ -16,7 +16,7 @@ export function WorkCard({ work }: WorkCardProps) {
           width={246}
           height={184}
           layout="responsive"
-          alt="work thumbsnail"
+          alt="work thumbnail"
         />
       </Box>
 
@@ -24,18 +24,22 @@ export function WorkCard({ work }: WorkCardProps) {
         <Typography variant="h4" fontWeight="bold">
           {work.title}
         </Typography>
-        <Stack direction="row" mt={2} mb={3} fontSize={{ xs: '16px', md: '24px' }}>
+        <Stack direction="row" mt={1} mb={2} spacing={4}>
           <Chip
             color="secondary"
             label={new Date(Number.parseInt(work.createdAt)).getFullYear()}
             size="small"
-            sx={{ fontWeight: 'bold' }}
+            sx={{
+              fontWeight: 'bold',
+              fontSize: { xs: '16px', md: '18px' },
+              alignSelf: 'center',
+            }}
           />
-          <Typography ml={4} color=" #8695A4">
+          <Typography color=" #8695A4" fontSize={{ xs: '16px', md: '20px' }}>
             {work.tagList.join(', ')}
           </Typography>
         </Stack>
-        <Typography>{work.shortDescription}</Typography>
+        <Typography sx={{ mr: { xs: 1, md: 2 } }}>{work.shortDescription}</Typography>
       </Box>
     </Stack>
   )

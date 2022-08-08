@@ -15,7 +15,7 @@ export function WorkList({ workList }: WorkListProps) {
       {workList.map((work) => (
         <Fragment key={work.id}>
           <WorkCard work={work} />
-          <Divider sx={{ my: 2 }}></Divider>
+          <Divider sx={{ my: { xs: 2, md: 3 } }}></Divider>
         </Fragment>
       ))}
     </Box>

@@ -8,16 +8,18 @@ export function RecentPosts() {
   const postList: Post[] = [
     {
       id: 1,
+      slug: '',
       title: 'Making a design system from scratch',
-      publishDate: '1659691190985',
+      publishDate: '2022-08-09T10:00:00Z',
       tagList: ['Design', 'Pattern'],
       description:
         'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
     },
     {
       id: 2,
+      slug: '',
       title: 'Creating pixel perfect icons in Figma',
-      publishDate: '1659691536400',
+      publishDate: '2022-08-11T12:30:00Z',
       tagList: ['Figma', 'Icon Design'],
       description:
         'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',

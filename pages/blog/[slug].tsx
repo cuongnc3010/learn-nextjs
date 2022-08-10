@@ -1,12 +1,18 @@
-import { Container, Divider } from '@mui/material'
+import { Box, Container, Divider } from '@mui/material'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
+import Script from 'next/script'
+import { unified } from 'unified'
 import rehypeDocument from 'rehype-document'
 import rehypeFormat from 'rehype-format'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
-import { unified } from 'unified'
+import remarkToc from 'remark-toc'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkPrism from 'remark-prism'
 
+import '../../public/prism.js'
 import { Post } from '@/models'
 import { getPostList } from '@/utils/posts'
 
@@ -19,16 +25,19 @@ export default function BlogDetailPage({ post }: BlogPageProps) {
     return null
   }
   return (
-    <Container>
-      <h2>Post Detail Page</h2>
-      <h3>{post.title}</h3>
-      <h4>{post.author?.name} </h4>
-      <p>{post.description}</p>
+    <Box>
+      <Container>
+        <h2>Post Detail Page</h2>
+        <h3>{post.title}</h3>
+        <h4>{post.author?.name} </h4>
+        <p>{post.description}</p>
 
-      <Divider />
+        <Divider />
 
-      <div dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}></div>
-    </Container>
+        <div dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}></div>
+      </Container>
+      <Script src="/prism.js" strategy="afterInteractive"></Script>
+    </Box>
   )
 }
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -60,7 +69,11 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async (
   /*parse markdown to html*/
   const file = await unified()
     .use(remarkParse)
+    .use(remarkToc, { heading: 'Agenda.*' })
+    .use(remarkPrism)
     .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
     .use(rehypeDocument, { title: 'Blog Detail Page' })
     .use(rehypeFormat)
     .use(rehypeStringify)

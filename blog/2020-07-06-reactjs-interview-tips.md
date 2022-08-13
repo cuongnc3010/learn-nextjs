@@ -14,8 +14,6 @@ Chắc hẳn nhiều bạn rất hồi hộp, lo lắng khi chuẩn bị cho bu�
 
 <!-- truncate-->
 
-![From unplash.com](https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80)
-
 **AGENGA:**
 
 1. Một vài lưu ý chung

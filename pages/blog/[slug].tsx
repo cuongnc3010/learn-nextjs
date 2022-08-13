@@ -29,7 +29,7 @@ export default function BlogDetailPage({ post }: BlogPageProps) {
     <Box>
       <SEO
         data={{
-          title: `${post.title} | Cuongnc blog`,
+          title: `${post.title}`,
           description: post.description,
           url: `${process.env.HOST_URL}/blog/${post.slug}`,
           thumbnailUrl:

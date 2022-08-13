@@ -15,6 +15,7 @@ import remarkPrism from 'remark-prism'
 import '../../public/prism.js'
 import { Post } from '@/models'
 import { getPostList } from '@/utils/posts'
+import { SEO } from '@/components/common'
 
 export interface BlogPageProps {
   post: Post
@@ -26,9 +27,17 @@ export default function BlogDetailPage({ post }: BlogPageProps) {
   }
   return (
     <Box>
+      <SEO
+        data={{
+          title: `${post.title} | Cuongnc blog`,
+          description: post.description,
+          url: `${process.env.HOST_URL}/blog/${post.slug}`,
+          thumbnailUrl:
+            post.thumbnailUrl || 'https://miro.medium.com/max/700/1*htbUdWgFQ3a94PMEvBr_hQ.png',
+        }}
+      />
       <Container>
-        <h2>Post Detail Page</h2>
-        <h3>{post.title}</h3>
+        <h1>{post.title}</h1>
         <h4>{post.author?.name} </h4>
         <p>{post.description}</p>
 

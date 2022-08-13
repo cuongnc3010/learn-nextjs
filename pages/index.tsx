@@ -1,4 +1,4 @@
-import { SEO } from '@/components/common/seo'
+import { SEO } from '@/components/common'
 import { FreaturedWorks, HeroSection, RecentPosts } from '@/components/home'
 import { MainLayout } from '@/components/layout'
 import { NextPageWithLayout } from '@/models'

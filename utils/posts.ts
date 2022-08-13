@@ -2,6 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { Post } from '@/models'
+import { isNullOrUndefined } from 'util'
 
 const BLOG_FOLDER = path.join(process.cwd(), 'blog')
 
@@ -21,6 +22,7 @@ export async function getPostList(): Promise<Post[]> {
       id: fileName,
       slug: data.slug,
       title: data.title,
+      thumbnailUrl: data.image || null,
       author: {
         name: data.author,
         title: data.author_title,
